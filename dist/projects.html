@@ -19,6 +19,14 @@
 			display: flex;
 			flex-direction: column;
 			height: 100%;
+			text-decoration: none;
+			color: inherit;
+			cursor: pointer;
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+		}
+		.project-card:hover {
+			transform: scale(1.04);
+			box-shadow: 0 8px 28px rgba(0,0,0,0.16);
 		}
 		.project-card-icon {
 			display: flex;
@@ -61,10 +69,6 @@
 			font-size: 0.95em;
 			line-height: 1.6;
 		}
-		.project-card-body .actions {
-			margin-top: 1em;
-			margin-bottom: 0;
-		}
 		.project-grid {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
@@ -90,8 +94,104 @@
 		.section-heading:first-of-type {
 			margin-top: 0;
 		}
+
+		/* ── Projects layout: sidebar + content ── */
+		#projects-layout {
+			display: flex;
+			gap: 2.5em;
+			align-items: flex-start;
+		}
+
+		#projects-sidebar {
+			width: 110px;
+			flex-shrink: 0;
+			position: sticky;
+			top: 2em;
+		}
+
+		#projects-sidebar ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			border-left: 2px solid #e8e8e8;
+		}
+
+		#projects-sidebar li + li {
+			margin-top: 0.25em;
+		}
+
+		#projects-sidebar a {
+			display: flex;
+			align-items: center;
+			gap: 0.55em;
+			padding: 0.45em 0 0.45em 1em;
+			color: #aaa;
+			text-decoration: none;
+			font-size: 0.78em;
+			font-weight: 700;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			transition: color 0.2s ease;
+			border: none;
+		}
+
+		#projects-sidebar a:hover {
+			color: #555;
+		}
+
+		#projects-sidebar a.active {
+			color: #333;
+		}
+
+		#projects-sidebar .dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			flex-shrink: 0;
+			opacity: 0.45;
+			transition: opacity 0.2s ease;
+		}
+
+		#projects-sidebar a.active .dot,
+		#projects-sidebar a:hover .dot {
+			opacity: 1;
+		}
+
+		.dot.websites { background: #4a90d9; }
+		.dot.games    { background: #e07b54; }
+		.dot.art      { background: #7b68c8; }
+
+		#projects-content {
+			flex: 1;
+			min-width: 0;
+		}
+
+		@media (max-width: 736px) {
+			#projects-layout {
+				flex-direction: column;
+				gap: 0;
+			}
+			#projects-sidebar {
+				width: 100%;
+				position: static;
+				margin-bottom: 1.5em;
+			}
+			#projects-sidebar ul {
+				display: flex;
+				border-left: none;
+				border-bottom: 2px solid #e8e8e8;
+				padding-bottom: 0.75em;
+				gap: 1.5em;
+			}
+			#projects-sidebar li + li {
+				margin-top: 0;
+			}
+			#projects-sidebar a {
+				padding: 0 0;
+			}
+		}
 	</style>
-  <link rel="stylesheet" crossorigin href="/assets/main-BnatIEPE.css">
+  <link rel="stylesheet" crossorigin href="/assets/main-DIUaIT6Q.css">
 </head>
 
 <body class="no-sidebar is-preload">
@@ -107,7 +207,7 @@
 		<!-- Nav -->
 		<nav id="nav">
 			<ul>
-				<li>
+				<li class="projects-tab">
 					<a href="projects.html">Projects</a>
 					<ul>
 						<li><a href="projects.html#websites">Websites</a>
@@ -150,197 +250,173 @@
 		<div class="wrapper">
 			<div class="container" id="main">
 
-				<article id="content">
-					<header>
-						<h2>Projects</h2>
-						<p>Websites, games, and creative work — a look at what I've built.</p>
-					</header>
+				<div id="projects-layout">
 
-					
+					<nav id="projects-sidebar">
+						<ul>
+							<li><a href="#websites" data-section="websites"><span class="dot websites"></span>Websites</a></li>
+							<li><a href="#games" data-section="games"><span class="dot games"></span>Games</a></li>
+							<li><a href="#art" data-section="art"><span class="dot art"></span>Art</a></li>
+						</ul>
+					</nav>
+
+					<article id="projects-content">
+						<header>
+							<h2>Projects</h2>
+							<p>Click a project to check it out. Tell me which is your favorite!</p>
+						</header>
+
+						
 					<!-- Websites -->
 					<h3 class="section-heading" id="websites">Websites</h3>
 					<div class="project-grid">
 						
-						<div class="project-card">
-							<div class="project-card-icon websites" >
+						<a class="project-card" href="https://run-club-alum-book-club.vercel.app/" target="_blank" rel="noopener">
+							<div class="project-card-icon websites" style="background-image: linear-gradient(rgba(74, 144, 217, 0.72), rgba(74, 144, 217, 0.72)), url('/assets/book_club-V64PJ8oU.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-book"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag websites">Website</span>
 								<header><h3>Book Club Website</h3></header>
-								<p>A website for a run club alumni book club.</p>
-								<ul class="actions">
-									<li><a href="https://run-club-alum-book-club.vercel.app/" class="button" target="_blank" rel="noopener">View Site</a></li>
-								</ul>
+								<p>A website for my book club with my friends, featuring database integration to store book ratings.</p>
 							</div>
-						</div>
+						</a>
 
-						<div class="project-card">
-							<div class="project-card-icon websites" >
+						<a class="project-card" href="https://www.africactive.org/" target="_blank" rel="noopener">
+							<div class="project-card-icon websites" style="background-image: linear-gradient(rgba(74, 144, 217, 0.72), rgba(74, 144, 217, 0.72)), url('/assets/africactive_site-CuCmjIGK.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-globe"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag websites">Website</span>
 								<header><h3>africActive</h3></header>
 								<p>Volunteer-built website for a local nonprofit food distribution organization. Designed and developed to help the community connect with their programs.</p>
-								<ul class="actions">
-									<li><a href="https://www.africactive.org/" class="button" target="_blank" rel="noopener">View Site</a></li>
-								</ul>
 							</div>
-						</div>
+						</a>
 
-						<div class="project-card">
-							<div class="project-card-icon websites" >
+						<a class="project-card" href="https://regular-show-qotd.vercel.app/" target="_blank" rel="noopener">
+							<div class="project-card-icon websites" style="background-image: linear-gradient(rgba(74, 144, 217, 0.72), rgba(74, 144, 217, 0.72)), url('/assets/regular_show_qotd_pic-CBwX4vSC.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-quote-right"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag websites">Website</span>
 								<header><h3>Regular Show Quote of the Day</h3></header>
-								<p>A daily quote generator pulling lines from the animated series Regular Show. Built for fans who want their daily dose of Mordecai and Rigby.</p>
-								<ul class="actions">
-									<li><a href="https://regular-show-qotd.vercel.app/" class="button" target="_blank" rel="noopener">View Site</a></li>
-								</ul>
+								<p>A daily quote generator pulling lines from the animated series Regular Show from an original corpus I constructed. Built for fans who want their daily dose of Mordecai and Rigby (and every other character).</p>
 							</div>
-						</div>
+						</a>
 
-						<div class="project-card">
-							<div class="project-card-icon websites" >
+						<a class="project-card" href="https://where-to-watch-nba.vercel.app/" target="_blank" rel="noopener">
+							<div class="project-card-icon websites" style="background-image: linear-gradient(rgba(74, 144, 217, 0.72), rgba(74, 144, 217, 0.72)), url('/assets/wtwnba-B6DcTNBd.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-basketball-ball"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag websites">Website</span>
 								<header><h3>Where To Watch NBA</h3></header>
-								<p>A quick-lookup tool that tells you which streaming service carries your favorite NBA team's games — no more hunting through apps.</p>
-								<ul class="actions">
-									<li><a href="https://where-to-watch-nba.vercel.app/" class="button" target="_blank" rel="noopener">View Site</a></li>
-								</ul>
+								<p>A quick-lookup tool that tells you which streaming service carries your favorite NBA team's games. Built for NBA fans like myself who got fed up with never knowing where to watch nationally-televised games.</p>
 							</div>
-						</div>
+						</a>
 
-						<div class="project-card">
-							<div class="project-card-icon websites" >
+						<a class="project-card" href="https://jl-5.github.io/DocSearch-Buddy/" target="_blank" rel="noopener">
+							<div class="project-card-icon websites" style="background-image: linear-gradient(rgba(74, 144, 217, 0.72), rgba(74, 144, 217, 0.72)), url('/assets/docsearchbuddypic-CvcvXeAz.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-search"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag websites">Website</span>
 								<header><h3>DocSearchBuddy</h3></header>
 								<p>A document search utility that makes it easier to find what you need across technical docs and references quickly.</p>
-								<ul class="actions">
-									<li><a href="https://jl-5.github.io/DocSearch-Buddy/" class="button" target="_blank" rel="noopener">View Site</a></li>
-								</ul>
 							</div>
-						</div>
+						</a>
 					</div>
 
 					<!-- Games -->
 					<h3 class="section-heading" id="games">Games</h3>
 					<div class="project-grid">
 						
-						<div class="project-card">
-							<div class="project-card-icon games" >
+						<a class="project-card" href="https://justinlong5000.itch.io/mintgame-2" target="_blank" rel="noopener">
+							<div class="project-card-icon games" style="background-image: linear-gradient(rgba(224, 123, 84, 0.72), rgba(224, 123, 84, 0.72)), url('/assets/mintgame2-CMtiSXO-.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-gamepad"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag games">Game</span>
 								<header><h3>MINTGAME 2</h3></header>
-								<p>The sequel — a game published on itch.io pushing further on the original's mechanics and design.</p>
-								<ul class="actions">
-									<li><a href="https://justinlong5000.itch.io/mintgame-2" class="button" target="_blank" rel="noopener">Play on itch.io</a></li>
-								</ul>
+								<p>The sequel to a demo game following the door-to-door discoveries of a mint salesman, this game is a narrative-driven open-world adventure developed in Unity and published on itch.io.</p>
 							</div>
-						</div>
+						</a>
 
-						<div class="project-card">
-							<div class="project-card-icon games" >
+						<a class="project-card" href="https://justinlong5000.itch.io/sonodream" target="_blank" rel="noopener">
+							<div class="project-card-icon games" style="background-image: linear-gradient(rgba(224, 123, 84, 0.72), rgba(224, 123, 84, 0.72)), url('/assets/sonodream-BbizKyWL.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-moon"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag games">Game</span>
 								<header><h3>SONOdream</h3></header>
-								<p>A dreamy, atmospheric game experience built and published on itch.io.</p>
-								<ul class="actions">
-									<li><a href="https://justinlong5000.itch.io/sonodream" class="button" target="_blank" rel="noopener">Play on itch.io</a></li>
-								</ul>
+								<p>A music-based 2D platformer with puzzle elements created as part of a team of 3 developers in Unity and published on itch.io. Featuring original music produced by me!</p>
 							</div>
-						</div>
+						</a>
 
-						<div class="project-card">
-							<div class="project-card-icon games" >
+						<a class="project-card" href="https://justinlong5000.itch.io/liminovator" target="_blank" rel="noopener">
+							<div class="project-card-icon games" style="background-image: linear-gradient(rgba(224, 123, 84, 0.72), rgba(224, 123, 84, 0.72)), url('/assets/liminovator-DwgubOES.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-arrow-up"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag games">Game</span>
 								<header><h3>LiminoVator</h3></header>
-								<p>A game with a vertical twist, published on itch.io.</p>
-								<ul class="actions">
-									<li><a href="https://justinlong5000.itch.io/liminovator" class="button" target="_blank" rel="noopener">Play on itch.io</a></li>
-								</ul>
+								<p>An unsettling horror experience based on an elevator, developed in Unreal Engine as part of the Ludem Dare 57 game jam.</p>
 							</div>
-						</div>
+						</a>
 
-						<div class="project-card">
-							<div class="project-card-icon games" >
+						<a class="project-card" href="https://justinlong5000.itch.io/get-blocked" target="_blank" rel="noopener">
+							<div class="project-card-icon games" style="background-image: linear-gradient(rgba(224, 123, 84, 0.72), rgba(224, 123, 84, 0.72)), url('/assets/get_blocked-BOiTggP2.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-th"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag games">Game</span>
 								<header><h3>Get Blocked</h3></header>
-								<p>A block-based puzzle game, published on itch.io.</p>
-								<ul class="actions">
-									<li><a href="https://justinlong5000.itch.io/get-blocked" class="button" target="_blank" rel="noopener">Play on itch.io</a></li>
-								</ul>
+								<p>An 8-bit narrative-driven RPG developed using Bitsy and published on itch.io.</p>
 							</div>
-						</div>
+						</a>
 
-						<div class="project-card">
-							<div class="project-card-icon games" >
+						<a class="project-card" href="https://youtu.be/voZhh7c6FPY" target="_blank" rel="noopener">
+							<div class="project-card-icon games" style="background-image: linear-gradient(rgba(224, 123, 84, 0.72), rgba(224, 123, 84, 0.72)), url('/assets/pizzavr-87F1UAOt.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-vr-cardboard"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag games">Game</span>
 								<header><h3>PizzaVR</h3></header>
-								<p>A VR experience — because why not make pizza in virtual reality? Demo showcased on YouTube.</p>
-								<ul class="actions">
-									<li><a href="https://youtu.be/voZhh7c6FPY" class="button" target="_blank" rel="noopener">Watch Demo</a></li>
-								</ul>
+								<p>A VR game featuring pizza delivery, non-nauseous rope-slinging movement, and a bustling city developed in Unity. Check out the demo on YouTube.</p>
 							</div>
-						</div>
+						</a>
 					</div>
 
 					<!-- Art -->
 					<h3 class="section-heading" id="art">Art</h3>
 					<div class="project-grid">
 						
-						<div class="project-card">
-							<div class="project-card-icon art" >
+						<a class="project-card" href="https://www.youtube.com/watch?v=cIRe-zFGWRo" target="_blank" rel="noopener">
+							<div class="project-card-icon art" style="background-image: linear-gradient(rgba(123, 104, 200, 0.72), rgba(123, 104, 200, 0.72)), url('/assets/staygrounded-BGiKhKY3.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-film"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag art">Art</span>
 								<header><h3>Stay Grounded</h3></header>
-								<p>A video art piece exploring themes of grounding and presence. Watch the full piece on YouTube.</p>
-								<ul class="actions">
-									<li><a href="https://www.youtube.com/watch?v=cIRe-zFGWRo" class="button" target="_blank" rel="noopener">Watch on YouTube</a></li>
-								</ul>
+								<p>A VR video art piece exploring themes of identity roots through the lens of my college dorm room. Check out the experience on YouTube.</p>
 							</div>
-						</div>
+						</a>
 
-						<div class="project-card">
-							<div class="project-card-icon art" >
+						<a class="project-card" href="https://soundcloud.com/heal-pool" target="_blank" rel="noopener">
+							<div class="project-card-icon art" style="background-image: linear-gradient(rgba(123, 104, 200, 0.72), rgba(123, 104, 200, 0.72)), url('/assets/healpool-C47cBCSy.png'); background-size: cover; background-position: center;">
 								<i class="fas fa-music"></i>
 							</div>
 							<div class="project-card-body">
 								<span class="project-tag art">Art</span>
 								<header><h3>healpool Music</h3></header>
 								<p>Electronic music produced and released under the healpool alias. Stream the full catalog on SoundCloud.</p>
-								<ul class="actions">
-									<li><a href="https://soundcloud.com/heal-pool" class="button" target="_blank" rel="noopener">Listen on SoundCloud</a></li>
-								</ul>
 							</div>
-						</div>
+						</a>
 					</div>
 
-				</article>
+					</article>
+
+				</div>
 			</div>
 		</div>
 
@@ -354,6 +430,33 @@
 		</div>
 
 	</div>
+
+	<!-- Sidebar active-section tracker -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var sections = document.querySelectorAll('.section-heading[id]');
+			var links    = document.querySelectorAll('#projects-sidebar a[data-section]');
+
+			if (!sections.length || !links.length) return;
+
+			// Mark first link active by default
+			links[0].classList.add('active');
+
+			var observer = new IntersectionObserver(function (entries) {
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						links.forEach(function (l) { l.classList.remove('active'); });
+						var active = document.querySelector(
+							'#projects-sidebar a[data-section="' + entry.target.id + '"]'
+						);
+						if (active) active.classList.add('active');
+					}
+				});
+			}, { rootMargin: '-15% 0px -75% 0px' });
+
+			sections.forEach(function (s) { observer.observe(s); });
+		});
+	</script>
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
