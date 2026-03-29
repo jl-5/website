@@ -1,0 +1,110 @@
+[
+  {
+    "category": "websites",
+    "title": "Book Club Website",
+    "description": "A website for a run club alumni book club.",
+    "icon": "fas fa-book",
+    "url": "https://run-club-alum-book-club.vercel.app/",
+    "linkText": "View Site",
+    "image": "/images/book_club.png"
+  },
+  {
+    "category": "websites",
+    "title": "africActive",
+    "description": "Volunteer-built website for a local nonprofit food distribution organization. Designed and developed to help the community connect with their programs.",
+    "icon": "fas fa-globe",
+    "url": "https://www.africactive.org/",
+    "linkText": "View Site",
+    "image": ""
+  },
+  {
+    "category": "websites",
+    "title": "Regular Show Quote of the Day",
+    "description": "A daily quote generator pulling lines from the animated series Regular Show. Built for fans who want their daily dose of Mordecai and Rigby.",
+    "icon": "fas fa-quote-right",
+    "url": "https://regular-show-qotd.vercel.app/",
+    "linkText": "View Site",
+    "image": ""
+  },
+  {
+    "category": "websites",
+    "title": "Where To Watch NBA",
+    "description": "A quick-lookup tool that tells you which streaming service carries your favorite NBA team's games — no more hunting through apps.",
+    "icon": "fas fa-basketball-ball",
+    "url": "https://where-to-watch-nba.vercel.app/",
+    "linkText": "View Site",
+    "image": ""
+  },
+  {
+    "category": "websites",
+    "title": "DocSearchBuddy",
+    "description": "A document search utility that makes it easier to find what you need across technical docs and references quickly.",
+    "icon": "fas fa-search",
+    "url": "https://jl-5.github.io/DocSearch-Buddy/",
+    "linkText": "View Site",
+    "image": ""
+  },
+  {
+    "category": "games",
+    "title": "MINTGAME 2",
+    "description": "The sequel — a game published on itch.io pushing further on the original's mechanics and design.",
+    "icon": "fas fa-gamepad",
+    "url": "https://justinlong5000.itch.io/mintgame-2",
+    "linkText": "Play on itch.io",
+    "image": ""
+  },
+  {
+    "category": "games",
+    "title": "SONOdream",
+    "description": "A dreamy, atmospheric game experience built and published on itch.io.",
+    "icon": "fas fa-moon",
+    "url": "https://justinlong5000.itch.io/sonodream",
+    "linkText": "Play on itch.io",
+    "image": ""
+  },
+  {
+    "category": "games",
+    "title": "LiminoVator",
+    "description": "A game with a vertical twist, published on itch.io.",
+    "icon": "fas fa-arrow-up",
+    "url": "https://justinlong5000.itch.io/liminovator",
+    "linkText": "Play on itch.io",
+    "image": ""
+  },
+  {
+    "category": "games",
+    "title": "Get Blocked",
+    "description": "A block-based puzzle game, published on itch.io.",
+    "icon": "fas fa-th",
+    "url": "https://justinlong5000.itch.io/get-blocked",
+    "linkText": "Play on itch.io",
+    "image": ""
+  },
+  {
+    "category": "games",
+    "title": "PizzaVR",
+    "description": "A VR experience — because why not make pizza in virtual reality? Demo showcased on YouTube.",
+    "icon": "fas fa-vr-cardboard",
+    "url": "https://youtu.be/voZhh7c6FPY",
+    "linkText": "Watch Demo",
+    "image": ""
+  },
+  {
+    "category": "art",
+    "title": "Stay Grounded",
+    "description": "A video art piece exploring themes of grounding and presence. Watch the full piece on YouTube.",
+    "icon": "fas fa-film",
+    "url": "https://www.youtube.com/watch?v=cIRe-zFGWRo",
+    "linkText": "Watch on YouTube",
+    "image": ""
+  },
+  {
+    "category": "art",
+    "title": "healpool Music",
+    "description": "Electronic music produced and released under the healpool alias. Stream the full catalog on SoundCloud.",
+    "icon": "fas fa-music",
+    "url": "https://soundcloud.com/heal-pool",
+    "linkText": "Listen on SoundCloud",
+    "image": ""
+  }
+]
