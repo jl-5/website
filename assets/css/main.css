@@ -3067,4 +3067,68 @@ input, select, textarea {
 				margin-bottom: 1em;
 			}
 
-	}
+
+
+/* =====================================================
+   Projects Tab — Attention Animation
+   ===================================================== */
+
+/* Enable pseudo-element shimmer on the Projects link */
+#nav > ul > li.projects-tab > a {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Shimmer streak that sweeps across the text */
+#nav > ul > li.projects-tab > a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -15%;
+    left: -110%;
+    width: 60%;
+    height: 130%;
+    background: linear-gradient(
+        108deg,
+        transparent 20%,
+        rgba(255, 255, 255, 0.42) 50%,
+        transparent 80%
+    );
+    border-radius: 4px;
+    animation: projects-shine 5s ease-in-out 2.5s infinite;
+    pointer-events: none;
+}
+
+/* Glow pulse + entry bounce */
+#nav > ul > li.projects-tab > a {
+    animation: projects-attention 3.2s ease-in-out 1s infinite;
+}
+
+/* Attention: brief upward nudge then warm golden glow that fades */
+@keyframes projects-attention {
+    0%   { box-shadow: none; transform: translateY(0); }
+    6%   { transform: translateY(-4px);
+           box-shadow: 0 4px 10px rgba(255, 200, 70, 0.35); }
+    12%  { transform: translateY(0); }
+    16%  { transform: translateY(-2px); }
+    22%  { transform: translateY(0); }
+    /* warm glow builds */
+    45%  { box-shadow: 0 0 14px 4px rgba(255, 190, 60, 0.55),
+                       0 0 30px 8px rgba(255, 140, 30, 0.18); }
+    /* glow fades out */
+    100% { box-shadow: none; transform: translateY(0); }
+}
+
+/* Shimmer sweeps from left to right */
+@keyframes projects-shine {
+    0%        { left: -110%; }
+    35%, 100% { left: 160%; }
+}
+
+/* Disable while page is loading */
+body.is-preload #nav > ul > li.projects-tab > a,
+body.is-preload #nav > ul > li.projects-tab > a::after {
+    animation: none !important;
+}
+}
