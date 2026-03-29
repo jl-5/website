@@ -3067,21 +3067,23 @@ input, select, textarea {
 				margin-bottom: 1em;
 			}
 
-
+	}
 
 /* =====================================================
    Projects Tab — Attention Animation
+   Triggered by JS adding .projects-animate after page load
    ===================================================== */
 
-/* Enable pseudo-element shimmer on the Projects link */
+/* Always: enable clipping for the shimmer pseudo-element */
 #nav > ul > li.projects-tab > a {
     position: relative;
     overflow: hidden;
     display: inline-block;
+    vertical-align: middle;
 }
 
-/* Shimmer streak that sweeps across the text */
-#nav > ul > li.projects-tab > a::after {
+/* Shimmer streak — only animates once .projects-animate is set by JS */
+#nav > ul > li.projects-tab.projects-animate > a::after {
     content: '';
     display: block;
     position: absolute;
@@ -3092,43 +3094,34 @@ input, select, textarea {
     background: linear-gradient(
         108deg,
         transparent 20%,
-        rgba(255, 255, 255, 0.42) 50%,
+        rgba(255, 255, 255, 0.45) 50%,
         transparent 80%
     );
     border-radius: 4px;
-    animation: projects-shine 5s ease-in-out 2.5s infinite;
+    animation: projects-shine 5s ease-in-out 1.5s infinite;
     pointer-events: none;
 }
 
-/* Glow pulse + entry bounce */
-#nav > ul > li.projects-tab > a {
-    animation: projects-attention 3.2s ease-in-out 1s infinite;
+/* Bounce + glow — only animates once .projects-animate is set by JS */
+#nav > ul > li.projects-tab.projects-animate > a {
+    animation: projects-attention 3.2s ease-in-out 0s infinite;
 }
 
-/* Attention: brief upward nudge then warm golden glow that fades */
+/* Double-nudge upward, then warm golden glow that fades */
 @keyframes projects-attention {
     0%   { box-shadow: none; transform: translateY(0); }
     6%   { transform: translateY(-4px);
-           box-shadow: 0 4px 10px rgba(255, 200, 70, 0.35); }
+           box-shadow: 0 4px 10px rgba(255, 200, 70, 0.4); }
     12%  { transform: translateY(0); }
     16%  { transform: translateY(-2px); }
     22%  { transform: translateY(0); }
-    /* warm glow builds */
-    45%  { box-shadow: 0 0 14px 4px rgba(255, 190, 60, 0.55),
-                       0 0 30px 8px rgba(255, 140, 30, 0.18); }
-    /* glow fades out */
+    45%  { box-shadow: 0 0 14px 4px rgba(255, 190, 60, 0.6),
+                       0 0 30px 8px rgba(255, 140, 30, 0.2); }
     100% { box-shadow: none; transform: translateY(0); }
 }
 
-/* Shimmer sweeps from left to right */
+/* Shimmer sweeps left → right */
 @keyframes projects-shine {
     0%        { left: -110%; }
     35%, 100% { left: 160%; }
-}
-
-/* Disable while page is loading */
-body.is-preload #nav > ul > li.projects-tab > a,
-body.is-preload #nav > ul > li.projects-tab > a::after {
-    animation: none !important;
-}
 }

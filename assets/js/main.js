@@ -19,10 +19,25 @@
 		});
 
 	// Play initial animations on page load.
+		var isProjectsPage = window.location.pathname.endsWith('projects.html');
+
 		$window.on('load', function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
+				if (!isProjectsPage)
+					$('#nav > ul > li.projects-tab').addClass('projects-animate');
 			}, 100);
+		});
+
+		// Fallback: remove is-preload if window.load never fires (e.g. Vite dev mode).
+		$(document).ready(function() {
+			window.setTimeout(function() {
+				if ($body.hasClass('is-preload')) {
+					$body.removeClass('is-preload');
+					if (!isProjectsPage)
+						$('#nav > ul > li.projects-tab').addClass('projects-animate');
+				}
+			}, 300);
 		});
 
 	// Dropdowns.
