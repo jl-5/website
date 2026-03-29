@@ -24,13 +24,13 @@ function renderProjectsFromData(src) {
     groups[project.category].push(project)
   }
 
-  const card = ({ category, title, description, icon, url, linkText, image }) => {
+  const card = ({ category, title, description, icon, url, image }) => {
     const overlay = CATEGORY_OVERLAY[category]
     const bgStyle = image
       ? `style="background-image: linear-gradient(${overlay}, ${overlay}), url('${image}'); background-size: cover; background-position: center;"`
       : ''
     return `
-						<div class="project-card">
+						<a class="project-card" href="${url}" target="_blank" rel="noopener">
 							<div class="project-card-icon ${category}" ${bgStyle}>
 								<i class="${icon}"></i>
 							</div>
@@ -38,11 +38,8 @@ function renderProjectsFromData(src) {
 								<span class="project-tag ${category}">${CATEGORY_LABELS[category] ?? category}</span>
 								<header><h3>${title}</h3></header>
 								<p>${description}</p>
-								<ul class="actions">
-									<li><a href="${url}" class="button" target="_blank" rel="noopener">${linkText}</a></li>
-								</ul>
 							</div>
-						</div>`
+						</a>`
   }
 
   const sectionLabel = (cat) => cat.charAt(0).toUpperCase() + cat.slice(1)
