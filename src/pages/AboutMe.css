@@ -1,0 +1,31 @@
+.row.features .feature header { margin-top: 1.5em; }
+
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.about-hero img {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  object-position: 50% 25%;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.feature-img {
+  height: 320px;
+  overflow: hidden;
+  border-radius: 7.5%;
+}
+
+@media (max-width: 736px) {
+  .about-hero { flex-direction: column; gap: 1.5em; text-align: center; }
+  .about-hero img { width: 220px; height: 220px; }
+  .feature-img { height: 260px; }
+}
+@media (max-width: 480px) {
+  .about-hero img { width: 180px; height: 180px; }
+  .feature-img { height: 220px; }
+}

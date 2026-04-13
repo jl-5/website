@@ -150,7 +150,7 @@ input, select, textarea {
 		}
 
 	strong, b {
-		font-weight: 400;
+		font-weight: 400; 
 		color: #42474c;
 	}
 
@@ -2113,7 +2113,7 @@ input, select, textarea {
 
 	#promo-wrapper {
 		position: relative;
-		background-image: url("images/overlay.png"), url("../../images/bergen.png");
+		background-image: url("images/overlay.png"), url("images/bergen.png");
 		background-size: 192px 192px, cover;
 		background-position: top left, 50% 60%;
 		color: #fff;
@@ -3124,4 +3124,37 @@ input, select, textarea {
 @keyframes projects-shine {
     0%        { left: -110%; }
     35%, 100% { left: 160%; }
+}
+
+/* ── CSS hover dropdowns (replaces jQuery dropotron) ── */
+
+#nav > ul > li {
+    position: relative;
+}
+
+/* Show first-level dropdown on hover */
+#nav > ul > li:hover > ul.dropotron {
+    display: block !important;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+}
+
+/* Hide and show second-level dropdowns */
+#nav > ul > li > ul.dropotron > li {
+    position: relative;
+}
+
+#nav > ul > li > ul.dropotron > li > ul.dropotron {
+    display: none;
+}
+
+#nav > ul > li > ul.dropotron > li:hover > ul.dropotron {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 10001;
 }
