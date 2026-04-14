@@ -3158,3 +3158,8 @@ input, select, textarea {
     left: 100%;
     z-index: 10001;
 }
+
+/* Mobile nav indent fix: indent classes were designed for <span> spacers,
+   not for <a> elements directly. Override to use padding-left instead. */
+#navPanel .link.indent-1 { display: block; width: auto; padding-left: 1.75em; }
+#navPanel .link.indent-2 { display: block; width: auto; padding-left: 3em; }
