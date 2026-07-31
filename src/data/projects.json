@@ -46,6 +46,15 @@
   },
   {
     "category": "games",
+    "title": "Spin Doctor",
+    "description": "A dialogue-baesd point-and-click game about convincing patients that your botched surgical operations were actually intentional. I created this game alongside two other developers for the Very Serious Game Jam in June 2026, including producing its original music.",
+    "icon": "fas fa-user-md",
+    "url": "https://udonknight.itch.io/spin-doctor",
+    "linkText": "Play on itch.io",
+    "image": "/images/spin_doctor.png"
+  },
+  {
+    "category": "games",
     "title": "MINTGAME 2",
     "description": "The sequel to a demo game following the door-to-door discoveries of a mint salesman, this game is a narrative-driven open-world adventure developed in Unity and published on itch.io.",
     "icon": "fas fa-gamepad",

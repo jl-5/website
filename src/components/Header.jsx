@@ -23,11 +23,23 @@ const NAV_ITEMS = [
         label: 'Games',
         to: '/projects#games',
         children: [
+          { label: 'Spin Doctor',   href: 'https://udonknight.itch.io/spin-doctor' },
           { label: 'MINTGAME 2',   href: 'https://justinlong5000.itch.io/mintgame-2' },
           { label: 'SONOdream',    href: 'https://justinlong5000.itch.io/sonodream' },
           { label: 'LiminoVator', href: 'https://justinlong5000.itch.io/liminovator' },
           { label: 'Get Blocked',  href: 'https://justinlong5000.itch.io/get-blocked' },
           { label: 'PizzaVR',      href: 'https://youtu.be/voZhh7c6FPY' },
+        ],
+      },
+      {
+        label: 'Music',
+        to: '/projects#music',
+        children: [
+          { label: 'Latest release: dropdead (healpool remix)',   href: 'https://soundcloud.com/heal-pool/drop-dead-healpool-remix?si=9d6e16e7513b4ebd996059e985bacc26&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing' },
+          { label: 'Marble Warble Soundtrack',    href: 'https://soundcloud.com/heal-pool/sets/marble-warble-ost-a-game-by' },
+          { label: 'Spin Doctor (produced OST)',    href: 'https://udonknight.itch.io/spin-doctor' },
+          { label: 'SONOdream (produced OST/SFX)',    href: 'https://justinlong5000.itch.io/sonodream' },
+          { label: 'SoundCloud',    href: 'https://soundcloud.com/heal-pool' },
         ],
       },
       {
