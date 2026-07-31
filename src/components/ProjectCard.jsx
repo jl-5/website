@@ -1,10 +1,11 @@
 import './ProjectCard.css'
 
-const CATEGORY_LABELS = { websites: 'Website', games: 'Game', art: 'Art' }
+const CATEGORY_LABELS = { websites: 'Website', games: 'Game', art: 'Art', music: 'Music' }
 const CATEGORY_OVERLAY = {
   websites: 'rgba(74, 144, 217, 0.72)',
   games:    'rgba(224, 123, 84, 0.72)',
   art:      'rgba(123, 104, 200, 0.72)',
+  music:    'rgba(45, 175, 155, 0.72)',
 }
 
 export default function ProjectCard({ project }) {

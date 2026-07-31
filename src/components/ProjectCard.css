@@ -36,6 +36,7 @@
 .project-card-icon.websites { background: #4a90d9; }
 .project-card-icon.games    { background: #e07b54; }
 .project-card-icon.art      { background: #7b68c8; }
+.project-card-icon.music    { background: #2dafab; }
 
 .project-card-body {
   padding: 1.4em 1.5em 1.5em;
@@ -60,3 +61,4 @@
 .project-tag.websites { background: #4a90d9; }
 .project-tag.games    { background: #e07b54; }
 .project-tag.art      { background: #7b68c8; }
+.project-tag.music    { background: #2dafab; }

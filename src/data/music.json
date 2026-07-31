@@ -1,0 +1,42 @@
+[
+  {
+    "category": "music",
+    "title": "dropdead (healpool remix)",
+    "description": "My latest release, a dance-pop remix of \"drop dead\" by Olivia Rodrigo, produced under the healpool alias. Give it a listen on SoundCloud.",
+    "icon": "fas fa-compact-disc",
+    "url": "https://soundcloud.com/heal-pool/drop-dead-healpool-remix?si=9d6e16e7513b4ebd996059e985bacc26&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+    "image": "/images/dropdead.JPG.jpeg"
+  },
+  {
+    "category": "music",
+    "title": "Marble Warble (Original Soundtrack)",
+    "description": "An original soundtrack composed for the game Marble Warble. Listen to the full OST on SoundCloud.",
+    "icon": "fas fa-headphones-alt",
+    "url": "https://soundcloud.com/heal-pool/sets/marble-warble-ost-a-game-by",
+    "image": "/images/marble_warble.png"
+  },
+  {
+    "category": "music",
+    "title": "Spin Doctor (Original Soundtrack)",
+    "description": "Original music produced for Spin Doctor, a dialogue-based point-and-click game built for the Very Serious Game Jam in June 2026.",
+    "icon": "fas fa-user-md",
+    "url": "https://jl-5.itch.io/spin-doctor-webgl",
+    "image": "/images/spin_doctor.png"
+  },
+  {
+    "category": "music",
+    "title": "SONOdream (Original Soundtrack & SFX)",
+    "description": "Original music and sound effects produced for SONOdream, a music-based 2D platformer with puzzle elements.",
+    "icon": "fas fa-moon",
+    "url": "https://justinlong5000.itch.io/sonodream",
+    "image": "/images/sonodream.png"
+  },
+  {
+    "category": "music",
+    "title": "SoundCloud Page",
+    "description": "All releases of original electronic music produced and released under the healpool alias. Stream the full catalog on SoundCloud.",
+    "icon": "fas fa-music",
+    "url": "https://soundcloud.com/heal-pool",
+    "image": "/images/healpool.png"
+  }
+]

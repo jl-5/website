@@ -32,17 +32,6 @@ const NAV_ITEMS = [
         ],
       },
       {
-        label: 'Music',
-        to: '/projects#music',
-        children: [
-          { label: 'Latest release: dropdead (healpool remix)',   href: 'https://soundcloud.com/heal-pool/drop-dead-healpool-remix?si=9d6e16e7513b4ebd996059e985bacc26&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing' },
-          { label: 'Marble Warble Soundtrack',    href: 'https://soundcloud.com/heal-pool/sets/marble-warble-ost-a-game-by' },
-          { label: 'Spin Doctor (produced OST)',    href: 'https://udonknight.itch.io/spin-doctor' },
-          { label: 'SONOdream (produced OST/SFX)',    href: 'https://justinlong5000.itch.io/sonodream' },
-          { label: 'SoundCloud',    href: 'https://soundcloud.com/heal-pool' },
-        ],
-      },
-      {
         label: 'Art',
         to: '/projects#art',
         children: [
@@ -52,9 +41,9 @@ const NAV_ITEMS = [
       },
     ],
   },
-  { label: 'Resume',   to: '/resume' },
-  { label: 'About Me', to: '/about', className: 'break' },
-  { label: 'Contact',  to: '/contact' },
+  { label: 'Music',    to: '/music' },
+  { label: 'Resume',   to: '/resume', className: 'break' },
+  { label: 'About Me', to: '/about' },
 ]
 
 export default function Header() {
@@ -150,7 +139,7 @@ export default function Header() {
             <p>
               Nice to meet you! Check out my work using the tabs
               <br />
-              above, and let's <Link to="/contact">get in touch</Link> if you like what you see.
+              above, and let's <Link to="/about#footer">get in touch</Link> if you like what you see.
             </p>
             <ul className="actions">
               <li><Link to="/about" className="button">You're Just_in Time!</Link></li>
@@ -185,7 +174,7 @@ export default function Header() {
               <a href="https://soundcloud.com/heal-pool" className="link indent-2" target="_blank" rel="noopener noreferrer">healpool Music</a>
               <Link to="/resume" className="link depth-0" onClick={() => setNavOpen(false)}>Resume</Link>
               <Link to="/about" className="link depth-0" onClick={() => setNavOpen(false)}>About Me</Link>
-              <Link to="/contact" className="link depth-0" onClick={() => setNavOpen(false)}>Contact</Link>
+              <Link to="/music" className="link depth-0" onClick={() => setNavOpen(false)}>Music</Link>
             </nav>
           </div>
         </>,
